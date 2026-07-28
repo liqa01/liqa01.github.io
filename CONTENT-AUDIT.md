@@ -27,8 +27,8 @@ The static pages were generated directly from the original WordPress theme archi
 - Visible source copy: preserved except for the user-directed correction of `info@iaid.ie` to `trainus.forireland@gmail.com`; no other source wording was added, removed, paraphrased, corrected, or reordered.
 - Section and card order: exact source content blocks were retained, so source order was not altered.
 - IAID logo: binary-identical copy of the source asset.
-- JavaScript: output begins with a binary-identical copy of the source asset; the premium interaction layer is appended as progressive enhancement.
-- CSS: output begins with a binary-identical copy of `assets/css/main.css`; the original smooth-scrolling rule from `style.css` and the premium motion layer are appended.
+- JavaScript: source interactions are preserved with the user-directed reveal-timing correction and premium progressive enhancements.
+- CSS: source styles are preserved with only the user-directed reveal-safety correction; the original smooth-scrolling rule and premium motion layer remain.
 - Original theme: extracted files are byte-for-byte identical to all 20 archived files (confirmed).
 - Original archive SHA-256: `0b5d50043ec64228cf7b02283c461b9200d41c44bad240f26cb8c17ef415fec1`.
 - WordPress/PHP removal: no PHP files, PHP tags, or WordPress function calls remain in the static HTML output.

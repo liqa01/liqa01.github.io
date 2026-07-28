@@ -3,6 +3,23 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>
+		document.documentElement.classList.add('js-enabled');
+		window.setTimeout(function () {
+			document.documentElement.classList.remove('is-loading', 'has-reveal-js');
+			document.querySelectorAll('.ia-reveal, .reveal-ready, .motion-reveal').forEach(function (element) {
+				var wasPending = element.classList.contains('motion-pending');
+				element.classList.add('is-visible', 'motion-in');
+				element.classList.remove('motion-pending');
+
+				if (wasPending) {
+					element.style.setProperty('--motion-delay', '0ms');
+				} else if (!element.classList.contains('motion-reveal')) {
+					element.style.transitionDelay = '0ms';
+				}
+			});
+		}, 700);
+	</script>
 	<title>Membership / Register Interest | IAID</title>
 	<link rel="stylesheet" href="../assets/css/main.css">
 	<script src="../assets/js/main.js" defer></script>

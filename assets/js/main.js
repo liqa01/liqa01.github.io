@@ -7,11 +7,6 @@
 		var progress = document.querySelector('[data-scroll-progress]');
 		var toggle = document.querySelector('[data-menu-toggle]');
 		var navigation = document.getElementById('site-navigation');
-		var mobileRevealQuery = window.matchMedia ? window.matchMedia('(max-width: 768px)') : null;
-
-		function shouldDisableReveal() {
-			return reduceMotion || !('IntersectionObserver' in window) || (mobileRevealQuery && mobileRevealQuery.matches);
-		}
 
 		function updateHeader() {
 			if (!header) {
@@ -106,43 +101,12 @@
 			}
 		});
 
-		if (seen.length) {
-			if (shouldDisableReveal()) {
-				seen.forEach(function (item) {
-					item.classList.add('is-visible');
-					item.style.transitionDelay = '0ms';
-				});
-			} else {
-				document.documentElement.classList.add('has-reveal-js');
-
-				var revealObserver = new IntersectionObserver(function (entries) {
-					entries.forEach(function (entry) {
-						if (entry.isIntersecting) {
-							entry.target.classList.add('is-visible');
-							revealObserver.unobserve(entry.target);
-						}
-					});
-				}, {
-					threshold: 0.12,
-					rootMargin: '0px 0px -8% 0px'
-				});
-
-				seen.forEach(function (item, index) {
-					item.classList.add('ia-reveal');
-					item.style.transitionDelay = Math.min(index % 8, 7) * 45 + 'ms';
-					revealObserver.observe(item);
-				});
-
-				window.setTimeout(function () {
-					seen.forEach(function (item) {
-						if (!item.classList.contains('is-visible')) {
-							item.classList.add('is-visible');
-							item.style.transitionDelay = '0ms';
-						}
-					});
-				}, 3600);
-			}
-		}
+		/* Legacy reveal targets remain visible; the motion layer may enhance them later. */
+		seen.forEach(function (item) {
+			item.classList.add('ia-reveal', 'is-visible');
+			item.style.transitionDelay = '0ms';
+		});
+		document.documentElement.classList.remove('has-reveal-js');
 
 		var hero = document.querySelector('[data-iaid-scene]');
 
@@ -323,39 +287,39 @@
 
 			if (identity) {
 				identity.classList.add('motion-hero-item');
-				setDelay(identity, 20);
+				setDelay(identity, 0);
 			}
 
 			titleLines.forEach(function (line, index) {
 				line.classList.add('motion-hero-item');
-				setDelay(line, 60 + index * 48);
+				setDelay(line, 20 + index * 30);
 			});
 
 			if (subtitle) {
 				subtitle.classList.add('motion-hero-item');
-				setDelay(subtitle, 270);
+				setDelay(subtitle, 120);
 			}
 
 			heroButtons.forEach(function (button, index) {
 				button.classList.add('motion-hero-item');
-				setDelay(button, 305 + index * 38);
+				setDelay(button, 150 + index * 30);
 			});
 
 			if (logoWrap) {
 				logoWrap.classList.add('motion-hero-item', 'motion-hero-logo');
-				setDelay(logoWrap, 330);
+				setDelay(logoWrap, 180);
 			}
 
 			heroStats.forEach(function (stat, index) {
 				stat.classList.add('motion-hero-item');
-				setDelay(stat, 350 + index * 40);
+				setDelay(stat, 190 + index * 20);
 			});
 		}
 
 		/* Page heroes use masked hierarchy without changing their markup. */
 		document.querySelectorAll('.ia-page-hero-inner').forEach(function (pageHero) {
 			Array.prototype.slice.call(pageHero.children).forEach(function (child, index) {
-				addMotionItem(child, index === 1 ? 'motion-mask' : 'motion-rise', index * 75);
+				addMotionItem(child, index === 1 ? 'motion-mask' : 'motion-rise', index * 40);
 			});
 		});
 
@@ -384,7 +348,7 @@
 		surfaces.forEach(function (surface, index) {
 			var style = index % 3 === 0 ? 'motion-scale' : (index % 3 === 1 ? 'motion-from-left' : 'motion-from-right');
 			surface.classList.add('motion-surface');
-			addMotionItem(surface, style, (index % 6) * 58);
+			addMotionItem(surface, style, (index % 5) * 50);
 		});
 
 		var contentSelector = [
@@ -401,32 +365,58 @@
 		].join(',');
 
 		document.querySelectorAll(contentSelector).forEach(function (item, index) {
-			addMotionItem(item, index % 4 === 0 ? 'motion-mask' : 'motion-rise', (index % 5) * 52);
+			addMotionItem(item, index % 4 === 0 ? 'motion-mask' : 'motion-rise', (index % 4) * 45);
 		});
 
 		var motionItems = document.querySelectorAll('.motion-reveal');
 		var motionObserver = null;
 
-		if (reduceMotion || !canObserve) {
-			motionItems.forEach(function (item) {
-				item.classList.add('motion-in');
+		function showMotionItem(item, preserveDelay) {
+			item.classList.add('motion-in');
+			item.classList.remove('motion-pending');
+
+			if (!preserveDelay) {
 				setDelay(item, 0);
+			}
+		}
+
+		function animateMotionItem(item) {
+			item.classList.remove('motion-in');
+			item.classList.add('motion-pending');
+
+			window.requestAnimationFrame(function () {
+				window.requestAnimationFrame(function () {
+					item.classList.add('motion-in');
+					window.setTimeout(function () {
+						item.classList.remove('motion-pending');
+					}, 430);
+				});
 			});
+		}
+
+		if (reduceMotion || !canObserve) {
+			motionItems.forEach(showMotionItem);
 		} else {
 			motionObserver = new IntersectionObserver(function (entries) {
 				entries.forEach(function (entry) {
 					if (entry.isIntersecting) {
-						entry.target.classList.add('motion-in');
+						animateMotionItem(entry.target);
 						motionObserver.unobserve(entry.target);
 					}
 				});
 			}, {
-				threshold: 0.12,
-				rootMargin: '0px 0px -9% 0px'
+				threshold: 0.05,
+				rootMargin: '0px 0px -5% 0px'
 			});
 
 			motionItems.forEach(function (item) {
-				motionObserver.observe(item);
+				var rect = item.getBoundingClientRect();
+
+				if (rect.bottom >= 0 && rect.top <= window.innerHeight * 1.15) {
+					showMotionItem(item);
+				} else {
+					motionObserver.observe(item);
+				}
 			});
 		}
 
@@ -444,15 +434,21 @@
 			}
 		}
 
-		/* Safety net: enhancements can never leave readable content hidden. */
+		/* Global safety net: no animation state may outlive 700ms. */
 		window.setTimeout(function () {
-			motionItems.forEach(function (item) {
-				if (!item.classList.contains('motion-in')) {
-					item.classList.add('motion-in');
-					setDelay(item, 0);
+			root.classList.remove('is-loading');
+			document.querySelectorAll('.ia-reveal, .reveal-ready').forEach(function (item) {
+				item.classList.add('is-visible');
+
+				if (!item.classList.contains('motion-reveal')) {
+					item.style.transitionDelay = '0ms';
 				}
 			});
-		}, 2400);
+			motionItems.forEach(function (item) {
+				var wasPending = item.classList.contains('motion-pending');
+				showMotionItem(item, !wasPending);
+			});
+		}, 700);
 
 		/* Section continuity and timeline milestone state. */
 		var sections = document.querySelectorAll('main > section, .resource-category');

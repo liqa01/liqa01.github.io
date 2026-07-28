@@ -2151,13 +2151,13 @@ li {
 .reveal-ready {
 	opacity: 1;
 	transform: none;
-	transition: opacity 700ms ease, transform 700ms ease;
+	transition: opacity 380ms ease, transform 380ms ease;
 }
 
 html.has-reveal-js .ia-reveal,
 html.has-reveal-js .reveal-ready {
-	opacity: 0;
-	transform: translateY(24px);
+	opacity: 1;
+	transform: none;
 }
 
 .ia-reveal.is-visible,
@@ -3121,20 +3121,20 @@ html {
 /* Premium motion upgrade: progressive, restrained, and content-safe. */
 :root {
 	--motion-fast: 180ms;
-	--motion-standard: 420ms;
-	--motion-reveal: 720ms;
+	--motion-standard: 360ms;
+	--motion-reveal: 420ms;
 	--motion-slow: 1100ms;
 	--motion-ambient: 18s;
 	--motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
 	--motion-ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
 	--motion-ease-expressive: cubic-bezier(0.16, 1, 0.3, 1);
 	--motion-spring: cubic-bezier(0.2, 1.45, 0.45, 1);
-	--motion-distance: 26px;
-	--motion-stagger: 58ms;
+	--motion-distance: 18px;
+	--motion-stagger: 50ms;
 }
 
 html.js-enabled body {
-	animation: iaPageArrive 520ms var(--motion-ease) both;
+	animation: iaPageArrive 360ms var(--motion-ease) both;
 }
 
 @keyframes iaPageArrive {
@@ -3284,20 +3284,20 @@ html.js-enabled body {
 	to { transform: translate3d(0, 7px, 0); }
 }
 
-/* Deliberate, sub-one-second hero introduction. */
+/* Fast hero enhancement: text remains fully visible throughout. */
 html.js-enabled.motion-ready .ia-hero .motion-hero-item {
-	opacity: 0;
-	transform: translate3d(0, 18px, 0) scale(0.992);
+	opacity: 1;
+	transform: translate3d(0, 8px, 0) scale(0.996);
 	transition:
-		opacity 620ms var(--motion-ease),
-		transform 720ms var(--motion-ease-expressive),
-		clip-path 720ms var(--motion-ease-expressive),
-		letter-spacing 720ms var(--motion-ease);
+		opacity 360ms var(--motion-ease),
+		transform 420ms var(--motion-ease-expressive),
+		clip-path 420ms var(--motion-ease-expressive),
+		letter-spacing 420ms var(--motion-ease);
 	transition-delay: var(--motion-delay, 0ms);
 }
 
 html.js-enabled.motion-ready .ia-hero .ia-hero-title .motion-hero-item {
-	clip-path: inset(0 0 100% 0);
+	clip-path: inset(0);
 	letter-spacing: -0.025em;
 }
 
@@ -3308,7 +3308,7 @@ html.js-enabled.motion-ready .ia-hero.is-introduced .motion-hero-item {
 	letter-spacing: inherit;
 }
 
-/* Reusable section-reveal hierarchy. Content remains visible until JS is ready. */
+/* Reusable section-reveal hierarchy. Content is visible unless JS briefly stages it in view. */
 .motion-reveal {
 	--motion-x: 0px;
 	--motion-y: 0px;
@@ -3328,32 +3328,32 @@ html.js-enabled.motion-ready .motion-reveal {
 	transition-delay: var(--motion-delay, 0ms);
 }
 
-html.js-enabled.motion-ready .motion-reveal:not(.motion-in) {
-	opacity: 0;
+html.js-enabled.motion-ready .motion-reveal.motion-pending:not(.motion-in) {
+	opacity: 0.35;
 	translate: var(--motion-x) var(--motion-y);
 	scale: var(--motion-scale);
 }
 
-html.js-enabled.motion-ready .motion-reveal.motion-from-left:not(.motion-in) {
+html.js-enabled.motion-ready .motion-reveal.motion-pending.motion-from-left:not(.motion-in) {
 	--motion-x: -22px;
 }
 
-html.js-enabled.motion-ready .motion-reveal.motion-from-right:not(.motion-in) {
+html.js-enabled.motion-ready .motion-reveal.motion-pending.motion-from-right:not(.motion-in) {
 	--motion-x: 22px;
 }
 
-html.js-enabled.motion-ready .motion-reveal.motion-rise:not(.motion-in) {
+html.js-enabled.motion-ready .motion-reveal.motion-pending.motion-rise:not(.motion-in) {
 	--motion-y: var(--motion-distance);
 }
 
-html.js-enabled.motion-ready .motion-reveal.motion-scale:not(.motion-in) {
+html.js-enabled.motion-ready .motion-reveal.motion-pending.motion-scale:not(.motion-in) {
 	--motion-y: 12px;
 	--motion-scale: 0.982;
 }
 
-html.js-enabled.motion-ready .motion-reveal.motion-mask:not(.motion-in) {
+html.js-enabled.motion-ready .motion-reveal.motion-pending.motion-mask:not(.motion-in) {
 	--motion-y: 16px;
-	clip-path: inset(0 0 100% 0);
+	clip-path: inset(0 0 10% 0);
 }
 
 html.js-enabled.motion-ready .motion-reveal.motion-in {
