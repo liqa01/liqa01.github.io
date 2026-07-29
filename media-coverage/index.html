@@ -3,23 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script>
-		document.documentElement.classList.add('js-enabled');
-		window.setTimeout(function () {
-			document.documentElement.classList.remove('is-loading', 'has-reveal-js');
-			document.querySelectorAll('.ia-reveal, .reveal-ready, .motion-reveal').forEach(function (element) {
-				var wasPending = element.classList.contains('motion-pending');
-				element.classList.add('is-visible', 'motion-in');
-				element.classList.remove('motion-pending');
-
-				if (wasPending) {
-					element.style.setProperty('--motion-delay', '0ms');
-				} else if (!element.classList.contains('motion-reveal')) {
-					element.style.transitionDelay = '0ms';
-				}
-			});
-		}, 700);
-	</script>
+	<link rel="icon" type="image/png" sizes="256x256" href="../assets/images/iaid-logo.png">
+	<link rel="apple-touch-icon" href="../assets/images/iaid-logo.png">
 	<title>Media Coverage &amp; Public Advocacy | IAID</title>
 	<meta name="description" content="Browse media coverage and public advocacy references documenting issues affecting international doctors working and training in Ireland.">
 	<meta name="robots" content="index, follow">
@@ -30,14 +15,14 @@
 	<meta property="og:title" content="Media Coverage &amp; Public Advocacy | IAID">
 	<meta property="og:description" content="Media reports, campaigns, and public references documenting issues affecting international doctors in Ireland.">
 	<meta property="og:url" content="https://theiaid.org/media-coverage/">
-	<meta property="og:image" content="https://theiaid.org/assets/images/iaid-logo.png">
+	<meta property="og:image" content="https://theiaid.org/assets/images/iaid-social-preview-editorial.jpg">
 	<meta property="og:image:alt" content="IAID — Irish Association of International Doctors">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Media Coverage &amp; Public Advocacy | IAID">
 	<meta name="twitter:description" content="Media reports, campaigns, and public references documenting issues affecting international doctors in Ireland.">
-	<meta name="twitter:image" content="https://theiaid.org/assets/images/iaid-logo.png">
-	<link rel="stylesheet" href="../assets/css/main.css">
-	<script src="../assets/js/main.js" defer></script>
+	<meta name="twitter:image" content="https://theiaid.org/assets/images/iaid-social-preview-editorial.jpg">
+	<link rel="stylesheet" href="../assets/css/site.css">
+	<script src="../assets/js/site.js" defer></script>
 </head>
 <body class="page ia-page-media">
 <a class="skip-link screen-reader-text" href="#primary">Skip to content</a>
@@ -51,7 +36,7 @@
 	</div>
 	<div class="wrap header-inner">
 		<div class="brand">
-			<a href="../" class="site-logo-link" rel="home"><img class="site-logo" src="../assets/images/iaid-logo.png" alt="Irish Association of International Doctors logo"></a>
+			<a href="../" class="site-logo-link" rel="home"><img class="site-logo" src="../assets/images/iaid-logo-official.jpeg" alt="Irish Association of International Doctors" width="1024" height="1024"></a>
 			<div class="brand-text">
 				<p class="site-name">IAID</p>
 				<p class="site-tagline">Irish Association of International Doctors</p>
@@ -71,7 +56,7 @@
 				<li><a href="../committees/">Committees</a></li>
 				<li><a href="../resources/">Resources</a></li>
 				<li><a href="../contact/">Contact</a></li>
-				<li><a href="mailto:trainus.forireland@gmail.com">Register Interest</a></li>
+				<li><a href="../membership-register-interest/">Register Interest</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -107,12 +92,16 @@
 		<button class="filter-button" type="button" data-media-filter="campaign-videos-and-public-statements">Campaign Videos and Public Statements</button>
 </div>
 
-<div class="media-grid" data-media-grid>
+	<div id="media-library" class="media-grid" data-media-grid>
 		<article class="media-card" data-media-category="immigration-and-stamp-4-reform" data-media-text="up to 1,800 doctors to benefit from immigration changes rté news 8 march 2022 immigration and stamp 4 reform rté reported that immigration changes would benefit up to 1,800 doctors by granting additional rights and reducing administrative burden.">
 			<div class="media-card-meta">
 				<span>Immigration and Stamp 4 Reform</span>
 				<span>8 March 2022</span>
 			</div>
+			<a class="media-thumbnail" href="https://www.rte.ie/news/ireland/2022/0308/1285113-doctors-immigration/" target="_blank" rel="noopener noreferrer" aria-label="Open this RT&Eacute; News article">
+				<img src="../assets/images/media/media-01.jpg" alt="Stethoscope resting beside a notebook" width="1280" height="720" loading="lazy" decoding="async">
+				<span class="media-thumbnail-source">RT&Eacute; News</span>
+			</a>
 			<h2>Up to 1,800 doctors to benefit from immigration changes</h2>
 			<p class="media-source">RT&Eacute; News</p>
 			<p>RT&Eacute; reported that immigration changes would benefit up to 1,800 doctors by granting additional rights and reducing administrative burden.</p>
@@ -123,6 +112,10 @@
 				<span>Immigration and Stamp 4 Reform</span>
 				<span>17 December 2021</span>
 			</div>
+			<a class="media-thumbnail" href="https://www.rte.ie/news/2021/1217/1267374-doctor-visas/" target="_blank" rel="noopener noreferrer" aria-label="Open this RT&Eacute; News article">
+				<img src="../assets/images/media/media-02.jpg" alt="Doctor wearing a face shield and respirator mask" width="1280" height="720" loading="lazy" decoding="async">
+				<span class="media-thumbnail-source">RT&Eacute; News</span>
+			</a>
 			<h2>Non-EEA doctors welcome work permit and visa changes</h2>
 			<p class="media-source">RT&Eacute; News</p>
 			<p>RT&Eacute; reported on work permit and visa changes welcomed by non-EEA doctors who had campaigned for reform around specialist training and immigration barriers.</p>
@@ -133,6 +126,10 @@
 				<span>Immigration and Stamp 4 Reform</span>
 				<span>17 December 2021</span>
 			</div>
+			<a class="media-thumbnail" href="https://www.medicalindependent.ie/in-the-news/breaking-news/faster-stamp-4-access-for-non-eu-doctors-an-historic-step-train-us-for-ireland/" target="_blank" rel="noopener noreferrer" aria-label="Open this Medical Independent article">
+				<img src="../assets/images/media/media-03.jpg" alt="Doctor using a laptop with a stethoscope nearby" width="1280" height="578" loading="lazy" decoding="async">
+				<span class="media-thumbnail-source">Medical Independent</span>
+			</a>
 			<h2>Faster stamp 4 access for non-EU doctors &lsquo;an historic step&rsquo; &ndash; Train Us For Ireland</h2>
 			<p class="media-source">Medical Independent</p>
 			<p>Medical Independent reported Train Us For Ireland&rsquo;s response to the announcement of faster Stamp 4 access for non-EU doctors on general employment permits.</p>
@@ -143,16 +140,24 @@
 				<span>Immigration and Stamp 4 Reform</span>
 				<span>Campaign page</span>
 			</div>
+			<a class="media-thumbnail" data-fit="contain" href="https://my.uplift.ie/petitions/fastaccessstamp4-for-all-international-doctors-in-ireland" target="_blank" rel="noopener noreferrer" aria-label="Open this MyUplift campaign page">
+				<img src="../assets/images/media/media-04.jpg" alt="Group of doctors wearing scrubs and face masks" width="1024" height="423" loading="lazy" decoding="async">
+				<span class="media-thumbnail-source">MyUplift</span>
+			</a>
 			<h2>#FastAccessStamp4 for all international doctors in Ireland</h2>
 			<p class="media-source">MyUplift</p>
 			<p>A public campaign calling for earlier Stamp 4 access and recognition of the contribution of international doctors working in Ireland.</p>
 			<a class="button button-secondary" href="https://my.uplift.ie/petitions/fastaccessstamp4-for-all-international-doctors-in-ireland" target="_blank" rel="noopener noreferrer">Read Article</a>
 		</article>
-		<article class="media-card" data-media-category="campaign-videos-and-public-statements" data-media-text="x/twitter campaign video: #fastaccessstamp4 x / twitter details to be verified campaign videos and public statements social media campaign video linked to advocacy for faster stamp 4 access for international doctors in ireland.">
+		<article class="media-card" data-media-category="campaign-videos-and-public-statements" data-media-text="x/twitter campaign video: #fastaccessstamp4 x / twitter 13 march 2022 campaign videos and public statements social media campaign video linked to advocacy for faster stamp 4 access for international doctors in ireland.">
 			<div class="media-card-meta">
 				<span>Campaign Videos and Public Statements</span>
-				<span>Details to be verified</span>
+				<span>13 March 2022</span>
 			</div>
+			<a class="media-thumbnail" data-fit="contain" href="https://x.com/i/status/1502977402850496519" target="_blank" rel="noopener noreferrer" aria-label="Open this campaign video on X">
+				<img src="../assets/images/media/media-05.jpg" alt="Campaign graphic marking the success of FastAccessStamp4" width="1080" height="804" loading="lazy" decoding="async">
+				<span class="media-thumbnail-source">Campaign video</span>
+			</a>
 			<h2>X/Twitter Campaign Video: #FastAccessStamp4</h2>
 			<p class="media-source">X / Twitter</p>
 			<p>Social media campaign video linked to advocacy for faster Stamp 4 access for international doctors in Ireland.</p>
@@ -163,6 +168,10 @@
 				<span>Campaign Videos and Public Statements</span>
 				<span>January 2022</span>
 			</div>
+			<a class="media-thumbnail" data-position="portrait" href="https://x.com/i/status/1482657635350585347" target="_blank" rel="noopener noreferrer" aria-label="Open this campaign post on X">
+				<img src="../assets/images/media/media-06.jpg" alt="Doctor in scrubs wearing a face mask" width="779" height="900" loading="lazy" decoding="async">
+				<span class="media-thumbnail-source">Campaign statement</span>
+			</a>
 			<h2>X/Twitter Campaign Post: Non-EEA doctor experience without timely Stamp 4 access</h2>
 			<p class="media-source">X / Twitter</p>
 			<p>A social media post highlighting the personal and professional instability experienced by non-EEA doctors without timely Stamp 4 access.</p>
@@ -173,6 +182,10 @@
 				<span>Training Access and Career Progression</span>
 				<span>23 September 2022</span>
 			</div>
+			<a class="media-thumbnail" href="https://www.medicalindependent.ie/in-the-news/news-features/analysing-training-access-for-international-doctors/" target="_blank" rel="noopener noreferrer" aria-label="Open this Medical Independent article">
+				<img src="../assets/images/media/media-07.jpg" alt="Stethoscope arranged over a world map" width="895" height="543" loading="lazy" decoding="async">
+				<span class="media-thumbnail-source">Medical Independent</span>
+			</a>
 			<h2>Analysing training access for international doctors</h2>
 			<p class="media-source">Medical Independent</p>
 			<p>A feature examining the impact of policy changes relating to training access for international doctors in Ireland.</p>
@@ -183,6 +196,10 @@
 				<span>Training Access and Career Progression</span>
 				<span>12 February 2022</span>
 			</div>
+			<a class="media-thumbnail" href="https://www.thejournal.ie/readme/non-eu-doctors-rights-5670629-Feb2022/" target="_blank" rel="noopener noreferrer" aria-label="Open this TheJournal.ie opinion article">
+				<img src="../assets/images/media/media-08.jpg" alt="Doctor wearing a face mask beside a window" width="613" height="400" loading="lazy" decoding="async">
+				<span class="media-thumbnail-source">TheJournal.ie</span>
+			</a>
 			<h2>Opinion: Are international doctors only here to fill the roster gaps?</h2>
 			<p class="media-source">TheJournal.ie</p>
 			<p>Opinion article by Dr Liqa ur Rehman discussing the challenges faced by non-EU doctors in Ireland, including career progression and training barriers.</p>
@@ -193,6 +210,10 @@
 				<span>Training Access and Career Progression</span>
 				<span>2 February 2021</span>
 			</div>
+			<a class="media-thumbnail" href="https://www.medicalindependent.ie/in-the-news/breaking-news/legal-questions-over-treatment-of-non-eu-doctors-in-training-application-process/" target="_blank" rel="noopener noreferrer" aria-label="Open this Medical Independent article">
+				<img src="../assets/images/media/media-09.jpg" alt="Metal globe representing international mobility" width="1280" height="660" loading="lazy" decoding="async">
+				<span class="media-thumbnail-source">Medical Independent</span>
+			</a>
 			<h2>Legal questions over treatment of non-EU doctors in training application process</h2>
 			<p class="media-source">Medical Independent</p>
 			<p>Medical Independent reported concerns raised at a seminar regarding the treatment of non-EU doctors and Stamp 4 holders in specialist training applications.</p>
@@ -203,6 +224,10 @@
 				<span>Work Permits and Visa Policy</span>
 				<span>28 March 2021</span>
 			</div>
+			<a class="media-thumbnail" href="https://www.irishexaminer.com/news/arid-40252817.html" target="_blank" rel="noopener noreferrer" aria-label="Open this Irish Examiner article">
+				<img src="../assets/images/media/media-10.jpg" alt="Stethoscope resting on medical paperwork" width="1280" height="669" loading="lazy" decoding="async">
+				<span class="media-thumbnail-source">Irish Examiner</span>
+			</a>
 			<h2>Foreign doctors may leave if they don&rsquo;t get critical skills permit</h2>
 			<p class="media-source">Irish Examiner</p>
 			<p>Irish Examiner reported calls for changes to contract and permit structures so international NCHDs could access critical skills employment permits.</p>
@@ -213,6 +238,10 @@
 				<span>Work Permits and Visa Policy</span>
 				<span>26 February 2024</span>
 			</div>
+			<a class="media-thumbnail" href="https://www.newstalk.com/news/demand-for-migrant-workers-sparks-surge-in-employers-seeking-work-permits-1645819" target="_blank" rel="noopener noreferrer" aria-label="Open this Newstalk article">
+				<img src="../assets/images/media/media-11.jpg" alt="Irish government minister speaking outdoors" width="1280" height="832" loading="lazy" decoding="async">
+				<span class="media-thumbnail-source">Newstalk</span>
+			</a>
 			<h2>Demand for migrant workers sparks surge in employers seeking work permits</h2>
 			<p class="media-source">Newstalk</p>
 			<p>Newstalk reported increased employer demand for work permits, with doctors among the professions sought in the Irish labour market.</p>
@@ -223,6 +252,10 @@
 				<span>Work Permits and Visa Policy</span>
 				<span>15 May 2024</span>
 			</div>
+			<a class="media-thumbnail" href="https://www.rte.ie/news/health/2024/0515/1449260-doctors-visas/" target="_blank" rel="noopener noreferrer" aria-label="Open this RT&Eacute; News article">
+				<img src="../assets/images/media/media-12.jpg" alt="Close-up of a doctor wearing a stethoscope" width="1280" height="720" loading="lazy" decoding="async">
+				<span class="media-thumbnail-source">RT&Eacute; News</span>
+			</a>
 			<h2>Doctors call for visa reform so families can join them</h2>
 			<p class="media-source">RT&Eacute; News</p>
 			<p>RT&Eacute; reported calls from international doctors for reform of visa processing so family members could join doctors working in Ireland.</p>
@@ -233,6 +266,10 @@
 				<span>Locum Reform and Pay</span>
 				<span>14 May 2023</span>
 			</div>
+			<a class="media-thumbnail" href="https://www.medicalindependent.ie/in-the-news/news-features/doctors-highlight-need-for-locum-reforms/" target="_blank" rel="noopener noreferrer" aria-label="Open this Medical Independent article">
+				<img src="../assets/images/media/media-13.jpg" alt="Healthcare professionals walking through a hospital" width="895" height="543" loading="lazy" decoding="async">
+				<span class="media-thumbnail-source">Medical Independent</span>
+			</a>
 			<h2>Doctors highlight need for locum reforms</h2>
 			<p class="media-source">Medical Independent</p>
 			<p>Medical Independent reported concerns about locum terms, pay rates, and restrictions affecting doctors, including issues raised by Train Us For Ireland.</p>
@@ -243,6 +280,10 @@
 				<span>Family Visa Delays and Family Reunification</span>
 				<span>1 May 2024</span>
 			</div>
+			<a class="media-thumbnail" href="https://www.irishexaminer.com/news/arid-41385616.html" target="_blank" rel="noopener noreferrer" aria-label="Open this Irish Examiner article">
+				<img src="../assets/images/media/media-14.jpg" alt="Doctor photographed outdoors" width="1023" height="581" loading="lazy" decoding="async">
+				<span class="media-thumbnail-source">Irish Examiner</span>
+			</a>
 			<h2>Doctors from outside EU waiting up to year for family visa decisions</h2>
 			<p class="media-source">Irish Examiner</p>
 			<p>Irish Examiner reported that doctors from outside the EU working in Ireland were experiencing long waits and refusals for family visa applications.</p>
@@ -253,6 +294,10 @@
 				<span>Family Visa Delays and Family Reunification</span>
 				<span>April 2024 campaign updates</span>
 			</div>
+			<a class="media-thumbnail" href="https://my.uplift.ie/petitions/minimise-family-visa-delays" target="_blank" rel="noopener noreferrer" aria-label="Open this MyUplift campaign page">
+				<img src="../assets/images/media/media-15.jpg" alt="Passports and health documents representing international travel" width="1024" height="683" loading="lazy" decoding="async">
+				<span class="media-thumbnail-source">MyUplift</span>
+			</a>
 			<h2>Urgent call to immediately resolve family visa delays #FastTrackFamilyVisa</h2>
 			<p class="media-source">MyUplift</p>
 			<p>A public petition calling for action on family visa delays, communication gaps, and processing concerns affecting skilled professionals and healthcare workers.</p>
@@ -263,6 +308,10 @@
 				<span>Family Visa Delays and Family Reunification</span>
 				<span>20 May 2024</span>
 			</div>
+			<a class="media-thumbnail" href="https://thinkeurope.de/blog/international-doctors-urge-ireland-to-amend-visa-policies-to-allow-their-families-to-join-them" target="_blank" rel="noopener noreferrer" aria-label="Open this Think Europe article">
+				<img src="../assets/images/media/media-16.jpg" alt="Doctor in a white coat holding a folder" width="977" height="667" loading="lazy" decoding="async">
+				<span class="media-thumbnail-source">Think Europe</span>
+			</a>
 			<h2>International doctors urge Ireland to amend visa policies to allow their families to join them</h2>
 			<p class="media-source">Think Europe</p>
 			<p>Think Europe summarised calls from international doctors in Ireland for family reunification visa reform and highlighted reported delays and rejection concerns.</p>
@@ -273,6 +322,10 @@
 				<span>Family Visa Delays and Family Reunification</span>
 				<span>4 May 2024</span>
 			</div>
+			<a class="media-thumbnail" data-fit="contain" href="https://tortoiseshack.ie/1250-losing-doctors-from-the-health-service-because-of-our-visa-system/" target="_blank" rel="noopener noreferrer" aria-label="Open this Tortoise Shack podcast episode">
+				<img src="../assets/images/media/media-17.jpg" alt="The Echo Chamber podcast cover artwork" width="400" height="400" loading="lazy" decoding="async">
+				<span class="media-thumbnail-source">Tortoise Shack podcast</span>
+			</a>
 			<h2>Losing Doctors from the Health Service because of our Visa System</h2>
 			<p class="media-source">Tortoise Shack</p>
 			<p>Podcast episode featuring discussion of family reunification visa difficulties affecting doctors and concerns about doctor retention in Ireland.</p>
@@ -283,12 +336,17 @@
 				<span>Workplace Safety, Bullying, and Discrimination</span>
 				<span>30 December 2025</span>
 			</div>
+			<a class="media-thumbnail" href="https://www.rte.ie/news/2025/1230/1550931-health-workers-abuse/" target="_blank" rel="noopener noreferrer" aria-label="Open this RT&Eacute; News article">
+				<img src="../assets/images/media/media-18.jpg" alt="Doctor photographed outdoors in Ireland" width="1280" height="720" loading="lazy" decoding="async">
+				<span class="media-thumbnail-source">RT&Eacute; News</span>
+			</a>
 			<h2>Migrant health workers living in fear of racist abuse, warns doctor</h2>
 			<p class="media-source">RT&Eacute; News</p>
 			<p>RT&Eacute; reported concerns from Dr Liqa Ur Rehman and healthcare leaders about racist abuse, safety fears, and the impact on migrant healthcare workers in Ireland.</p>
 			<a class="button button-secondary" href="https://www.rte.ie/news/2025/1230/1550931-health-workers-abuse/" target="_blank" rel="noopener noreferrer">Read Article</a>
 		</article>
 </div>
+	<p class="media-empty-state" data-media-empty hidden>No references match that search and category. Try a broader term or select “All”.</p>
 
 <div class="disclaimer-box media-note">
 	<p>External links are provided for reference and public information. IAID does not reproduce copyrighted article content. All rights remain with the original publishers.</p>
@@ -304,15 +362,15 @@
 				<h2>Connect with IAID</h2>
 				<p>Join a professional community supporting international doctors across Ireland.</p>
 			</div>
-			<a class="button button-secondary" href="mailto:trainus.forireland@gmail.com">Register Interest</a>
+			<a class="button button-secondary" href="../membership-register-interest/">Register Interest</a>
 		</div>
 	</div>
 	<div class="wrap footer-grid">
 		<div class="footer-brand">
-			<a href="../" class="footer-logo-link" rel="home"><img class="site-logo" src="../assets/images/iaid-logo.png" alt="Irish Association of International Doctors logo"></a>
+			<a href="../" class="footer-logo-link" rel="home"><img class="site-logo" src="../assets/images/iaid-logo-official.jpeg" alt="Irish Association of International Doctors" width="1024" height="1024"></a>
 			<p class="footer-title">Irish Association of International Doctors</p>
 			<p>A professional medical society supporting international doctors in Ireland through advocacy, education, mentorship, immigration guidance, relocation support, research, networking, and community support.</p>
-			<a href="mailto:trainus.forireland@gmail.com" style="display:inline-block;margin-top:12px;font-weight:700;color:#22d3ee;">trainus.forireland@gmail.com</a>
+			<a class="footer-email" href="mailto:trainus.forireland@gmail.com">trainus.forireland@gmail.com</a>
 		</div>
 		<div>
 			<h2>Quick links</h2>
@@ -322,7 +380,7 @@
 				<li><a href="../media-coverage/">Media Coverage</a></li>
 				<li><a href="../resources/">Resources</a></li>
 				<li><a href="../contact/">Contact</a></li>
-				<li><a href="mailto:trainus.forireland@gmail.com">Register Interest</a></li>
+				<li><a href="../membership-register-interest/">Register Interest</a></li>
 			</ul>
 		</div>
 		<div>
@@ -340,7 +398,7 @@
 		<div>
 			<h2>Contact</h2>
 			<p><a href="mailto:trainus.forireland@gmail.com">trainus.forireland@gmail.com</a></p>
-			<p style="margin-top:16px;font-size:0.82rem;opacity:0.55;">External links are provided for reference and public information. IAID does not reproduce copyrighted article content.</p>
+			<p class="footer-note">External links are provided for reference and public information. IAID does not reproduce copyrighted article content.</p>
 		</div>
 	</div>
 	<div class="wrap footer-bottom">

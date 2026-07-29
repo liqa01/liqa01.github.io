@@ -3,23 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script>
-		document.documentElement.classList.add('js-enabled');
-		window.setTimeout(function () {
-			document.documentElement.classList.remove('is-loading', 'has-reveal-js');
-			document.querySelectorAll('.ia-reveal, .reveal-ready, .motion-reveal').forEach(function (element) {
-				var wasPending = element.classList.contains('motion-pending');
-				element.classList.add('is-visible', 'motion-in');
-				element.classList.remove('motion-pending');
-
-				if (wasPending) {
-					element.style.setProperty('--motion-delay', '0ms');
-				} else if (!element.classList.contains('motion-reveal')) {
-					element.style.transitionDelay = '0ms';
-				}
-			});
-		}, 700);
-	</script>
+	<link rel="icon" type="image/png" sizes="256x256" href="../assets/images/iaid-logo.png">
+	<link rel="apple-touch-icon" href="../assets/images/iaid-logo.png">
 	<title>Register Interest | IAID Membership Ireland</title>
 	<meta name="description" content="Register your interest in IAID membership and connect with a professional community supporting international doctors throughout Ireland.">
 	<meta name="robots" content="index, follow">
@@ -30,14 +15,14 @@
 	<meta property="og:title" content="Register Interest | IAID Membership Ireland">
 	<meta property="og:description" content="Connect with a professional community supporting international doctors throughout Ireland.">
 	<meta property="og:url" content="https://theiaid.org/membership-register-interest/">
-	<meta property="og:image" content="https://theiaid.org/assets/images/iaid-logo.png">
+	<meta property="og:image" content="https://theiaid.org/assets/images/iaid-social-preview-editorial.jpg">
 	<meta property="og:image:alt" content="IAID — Irish Association of International Doctors">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Register Interest | IAID Membership Ireland">
 	<meta name="twitter:description" content="Connect with a professional community supporting international doctors throughout Ireland.">
-	<meta name="twitter:image" content="https://theiaid.org/assets/images/iaid-logo.png">
-	<link rel="stylesheet" href="../assets/css/main.css">
-	<script src="../assets/js/main.js" defer></script>
+	<meta name="twitter:image" content="https://theiaid.org/assets/images/iaid-social-preview-editorial.jpg">
+	<link rel="stylesheet" href="../assets/css/site.css">
+	<script src="../assets/js/site.js" defer></script>
 </head>
 <body class="page ia-page-register">
 <a class="skip-link screen-reader-text" href="#primary">Skip to content</a>
@@ -51,7 +36,7 @@
 	</div>
 	<div class="wrap header-inner">
 		<div class="brand">
-			<a href="../" class="site-logo-link" rel="home"><img class="site-logo" src="../assets/images/iaid-logo.png" alt="Irish Association of International Doctors logo"></a>
+			<a href="../" class="site-logo-link" rel="home"><img class="site-logo" src="../assets/images/iaid-logo-official.jpeg" alt="Irish Association of International Doctors" width="1024" height="1024"></a>
 			<div class="brand-text">
 				<p class="site-name">IAID</p>
 				<p class="site-tagline">Irish Association of International Doctors</p>
@@ -71,7 +56,7 @@
 				<li><a href="../committees/">Committees</a></li>
 				<li><a href="../resources/">Resources</a></li>
 				<li><a href="../contact/">Contact</a></li>
-				<li class="current-menu-item"><a href="mailto:trainus.forireland@gmail.com" aria-current="page">Register Interest</a></li>
+				<li class="current-menu-item"><a href="./" aria-current="page">Register Interest</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -131,15 +116,15 @@
 				<h2>Connect with IAID</h2>
 				<p>Join a professional community supporting international doctors across Ireland.</p>
 			</div>
-			<a class="button button-secondary" href="mailto:trainus.forireland@gmail.com">Register Interest</a>
+			<a class="button button-secondary" href="./">Register Interest</a>
 		</div>
 	</div>
 	<div class="wrap footer-grid">
 		<div class="footer-brand">
-			<a href="../" class="footer-logo-link" rel="home"><img class="site-logo" src="../assets/images/iaid-logo.png" alt="Irish Association of International Doctors logo"></a>
+			<a href="../" class="footer-logo-link" rel="home"><img class="site-logo" src="../assets/images/iaid-logo-official.jpeg" alt="Irish Association of International Doctors" width="1024" height="1024"></a>
 			<p class="footer-title">Irish Association of International Doctors</p>
 			<p>A professional medical society supporting international doctors in Ireland through advocacy, education, mentorship, immigration guidance, relocation support, research, networking, and community support.</p>
-			<a href="mailto:trainus.forireland@gmail.com" style="display:inline-block;margin-top:12px;font-weight:700;color:#22d3ee;">trainus.forireland@gmail.com</a>
+			<a class="footer-email" href="mailto:trainus.forireland@gmail.com">trainus.forireland@gmail.com</a>
 		</div>
 		<div>
 			<h2>Quick links</h2>
@@ -149,7 +134,7 @@
 				<li><a href="../media-coverage/">Media Coverage</a></li>
 				<li><a href="../resources/">Resources</a></li>
 				<li><a href="../contact/">Contact</a></li>
-				<li><a href="mailto:trainus.forireland@gmail.com">Register Interest</a></li>
+				<li><a href="./">Register Interest</a></li>
 			</ul>
 		</div>
 		<div>
@@ -167,7 +152,7 @@
 		<div>
 			<h2>Contact</h2>
 			<p><a href="mailto:trainus.forireland@gmail.com">trainus.forireland@gmail.com</a></p>
-			<p style="margin-top:16px;font-size:0.82rem;opacity:0.55;">External links are provided for reference and public information. IAID does not reproduce copyrighted article content.</p>
+			<p class="footer-note">External links are provided for reference and public information. IAID does not reproduce copyrighted article content.</p>
 		</div>
 	</div>
 	<div class="wrap footer-bottom">

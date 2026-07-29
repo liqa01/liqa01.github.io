@@ -3,23 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script>
-		document.documentElement.classList.add('js-enabled');
-		window.setTimeout(function () {
-			document.documentElement.classList.remove('is-loading', 'has-reveal-js');
-			document.querySelectorAll('.ia-reveal, .reveal-ready, .motion-reveal').forEach(function (element) {
-				var wasPending = element.classList.contains('motion-pending');
-				element.classList.add('is-visible', 'motion-in');
-				element.classList.remove('motion-pending');
-
-				if (wasPending) {
-					element.style.setProperty('--motion-delay', '0ms');
-				} else if (!element.classList.contains('motion-reveal')) {
-					element.style.transitionDelay = '0ms';
-				}
-			});
-		}, 700);
-	</script>
+	<link rel="icon" type="image/png" sizes="256x256" href="assets/images/iaid-logo.png">
+	<link rel="apple-touch-icon" href="assets/images/iaid-logo.png">
 	<title>Irish Association of International Doctors (IAID) | Ireland</title>
 	<meta name="description" content="The Irish Association of International Doctors supports international doctors in Ireland through advocacy, education, mentorship, guidance, and community.">
 	<meta name="robots" content="index, follow">
@@ -30,14 +15,14 @@
 	<meta property="og:title" content="Irish Association of International Doctors (IAID)">
 	<meta property="og:description" content="Supporting international doctors across Ireland through advocacy, education, mentorship, guidance, and community.">
 	<meta property="og:url" content="https://theiaid.org/">
-	<meta property="og:image" content="https://theiaid.org/assets/images/iaid-logo.png">
-	<meta property="og:image:width" content="1024">
-	<meta property="og:image:height" content="1024">
+	<meta property="og:image" content="https://theiaid.org/assets/images/iaid-social-preview-editorial.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
 	<meta property="og:image:alt" content="IAID — Irish Association of International Doctors">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Irish Association of International Doctors (IAID)">
 	<meta name="twitter:description" content="Supporting international doctors across Ireland through advocacy, education, mentorship, guidance, and community.">
-	<meta name="twitter:image" content="https://theiaid.org/assets/images/iaid-logo.png">
+	<meta name="twitter:image" content="https://theiaid.org/assets/images/iaid-social-preview-editorial.jpg">
 	<script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
@@ -45,8 +30,8 @@
 		"name": "Irish Association of International Doctors",
 		"alternateName": "IAID",
 		"url": "https://theiaid.org/",
-		"logo": "https://theiaid.org/assets/images/iaid-logo.png",
-		"image": "https://theiaid.org/assets/images/iaid-logo.png",
+		"logo": "https://theiaid.org/assets/images/iaid-logo-official.jpeg",
+		"image": "https://theiaid.org/assets/images/iaid-logo-official.jpeg",
 		"email": "trainus.forireland@gmail.com",
 		"foundingDate": "2017",
 		"areaServed": {
@@ -56,8 +41,8 @@
 		"description": "A professional medical society supporting international doctors in Ireland through advocacy, education, mentorship, guidance, and community."
 	}
 	</script>
-	<link rel="stylesheet" href="assets/css/main.css">
-	<script src="assets/js/main.js" defer></script>
+	<link rel="stylesheet" href="assets/css/site.css">
+	<script src="assets/js/site.js" defer></script>
 </head>
 <body class="home">
 <a class="skip-link screen-reader-text" href="#primary">Skip to content</a>
@@ -71,7 +56,7 @@
 	</div>
 	<div class="wrap header-inner">
 		<div class="brand">
-			<a href="./" class="site-logo-link" rel="home"><img class="site-logo" src="assets/images/iaid-logo.png" alt="Irish Association of International Doctors logo"></a>
+			<a href="./" class="site-logo-link" rel="home"><img class="site-logo" src="assets/images/iaid-logo-official.jpeg" alt="Irish Association of International Doctors" width="1024" height="1024"></a>
 			<div class="brand-text">
 				<p class="site-name">IAID</p>
 				<p class="site-tagline">Irish Association of International Doctors</p>
@@ -91,57 +76,53 @@
 				<li><a href="committees/">Committees</a></li>
 				<li><a href="resources/">Resources</a></li>
 				<li><a href="contact/">Contact</a></li>
-				<li><a href="mailto:trainus.forireland@gmail.com">Register Interest</a></li>
+				<li><a href="membership-register-interest/">Register Interest</a></li>
 			</ul>
 		</nav>
 	</div>
 </header>
 <main id="primary" class="site-main ia-home-main">
-<section class="ia-hero" data-iaid-scene>
-	<div class="ia-hero-mesh" aria-hidden="true"></div>
-	<div class="ia-hero-lines" aria-hidden="true"></div>
-	<div class="wrap ia-hero-inner ia-reveal">
-		<!-- Left: text content -->
+<section class="ia-hero">
+	<div class="wrap ia-hero-inner">
 		<div class="ia-hero-content">
-			<div class="ia-identity-lockup">
-				<img src="assets/images/iaid-logo.png" alt="Irish Association of International Doctors logo" width="34" height="34" style="border-radius:50%;object-fit:cover;flex-shrink:0;" />
-				<span class="ia-identity-badge">Professional Society</span>
-				<span>Ireland &middot; Est. 2017</span>
+			<div class="ia-hero-badge hero-intro-item">
+				<span>Professional Society</span>
+				<strong>Ireland &middot; Est. 2017</strong>
 			</div>
-			<h1 class="ia-hero-title"><span>Irish</span><span>Association</span><span class="ia-hero-title-accent">of</span><span class="ia-hero-title-accent">International</span><span>Doctors</span></h1>
-			<p class="ia-hero-subtitle">Supporting, representing, and empowering international doctors across Ireland through advocacy, education, mentorship, and community.</p>
-			<div class="ia-actions">
-				<a class="ia-button ia-button-primary" href="mailto:trainus.forireland@gmail.com">Register Interest</a>
-				<a class="ia-button ia-button-gold" href="advocacy-achievements/">Our Advocacy</a>
-				<a class="ia-button ia-button-ghost" href="media-coverage/">Media Coverage</a>
+			<h1 class="ia-hero-title">Irish<br>Association of<br><span>International Doctors</span></h1>
+			<p class="ia-hero-subtitle hero-intro-item">A professional home supporting, representing, and empowering international doctors across Ireland through advocacy, education, mentorship, and community.</p>
+			<div class="ia-actions hero-intro-item">
+				<a class="ia-button ia-button-primary" href="membership-register-interest/">Register Interest</a>
+				<a class="ia-button ia-button-ghost" href="advocacy-achievements/">Our Advocacy</a>
+				<a class="ia-button ia-button-quiet" href="media-coverage/">Media Coverage</a>
 			</div>
+			<p class="ia-hero-assurance hero-intro-item">Member-led <span></span> Professional <span></span> Nationwide</p>
 		</div>
-		<!-- Right: logo + stats -->
-		<div class="ia-hero-visual">
-			<div class="ia-hero-logo-wrap">
-				<img class="ia-hero-logo" src="assets/images/iaid-logo.png" alt="Irish Association of International Doctors" />
+		<div class="ia-hero-visual" data-hero-media>
+			<div class="ia-hero-crest">
+				<div class="ia-hero-orbit" aria-hidden="true"></div>
+				<div class="ia-hero-logo-stage">
+					<img src="assets/images/iaid-logo-official.jpeg" alt="Irish Association of International Doctors society crest" width="1024" height="1024" decoding="async" fetchpriority="high">
+				</div>
 			</div>
-			<div class="ia-hero-stats">
-				<div class="ia-hero-stat"><strong><span data-counter data-target="7">7</span>+</strong><span>Years advocacy</span></div>
-				<div class="ia-hero-stat"><strong><span data-counter data-target="18">18</span>+</strong><span>Media references</span></div>
-				<div class="ia-hero-stat"><strong><span data-counter data-target="7">7</span></strong><span>Areas of work</span></div>
+			<div class="ia-hero-stats" aria-label="IAID at a glance">
+				<div><strong><span data-counter data-target="7">7</span>+</strong><span>Years of advocacy</span></div>
+				<div><strong><span data-counter data-target="18">18</span>+</strong><span>Media references</span></div>
+				<div><strong><span data-counter data-target="7">7</span></strong><span>Areas of work</span></div>
 			</div>
 		</div>
 	</div>
-</section>
-
-<section class="ia-impact" aria-label="IAID impact overview">
-	<div class="wrap ia-impact-grid">
-		<div class="ia-impact-item ia-reveal"><strong><span data-counter data-target="7">7</span>+</strong><span>years of advocacy</span></div>
-		<div class="ia-impact-item ia-reveal"><strong><span data-counter data-target="7">7</span></strong><span>key areas of work</span></div>
-		<div class="ia-impact-item ia-reveal"><strong><span data-counter data-target="18">18</span>+</strong><span>media references</span></div>
-		<div class="ia-impact-item ia-reveal"><strong>Nationwide</strong><span>professional community</span></div>
-	</div>
+	<a class="ia-hero-scroll" href="#iaid-work"><span>Discover IAID</span><i aria-hidden="true"></i></a>
 </section>
 
 <section class="ia-section ia-audience">
 	<div class="wrap ia-section-head ia-reveal">
-		<span class="ia-label">Who IAID Supports</span>
+		<div class="ia-label ia-chapter-label">
+			<span>Who IAID Supports</span>
+			<strong>01</strong>
+			<b>People &amp; partnership</b>
+			<small>Doctors, newcomers, and healthcare partners across Ireland</small>
+		</div>
 		<h2>A professional society for international doctors in Ireland</h2>
 		<p>IAID provides a structured, professional platform for International Medical Graduates and international doctors working across Ireland. The association brings together doctors from diverse backgrounds to support professional growth, improve access to guidance, strengthen peer networks, and promote constructive engagement with healthcare stakeholders.</p>
 	</div>
@@ -159,9 +140,14 @@
 	</div>
 </section>
 
-<section class="ia-section ia-work">
+<section id="iaid-work" class="ia-section ia-work">
 	<div class="wrap ia-section-head ia-reveal">
-		<span class="ia-label">Key Areas of Work</span>
+		<div class="ia-label ia-chapter-label">
+			<span>Key Areas of Work</span>
+			<strong>02</strong>
+			<b>Seven priorities</b>
+			<small>Guidance, representation, professional growth, and community</small>
+		</div>
 		<h2>Practical support, professional development, advocacy, and community building</h2>
 		<p>IAID's work is organised around clear areas of support so doctors can find guidance, connection, and representation at different stages of their professional journey.</p>
 	</div>
@@ -196,11 +182,16 @@
 
 <section class="ia-section ia-story">
 	<div class="wrap ia-section-head ia-reveal">
-		<span class="ia-label">Our Story</span>
+		<div class="ia-label ia-chapter-label">
+			<span>Our Story</span>
+			<strong>03</strong>
+			<b>Advocacy into action</b>
+			<small>Seven years of national advocacy carried forward by IAID</small>
+		</div>
 		<h2>From Train Us For Ireland to IAID</h2>
 		<p>IAID emerges from a seven-year national advocacy journey that began under the banner "Train Us For Ireland". Today, IAID carries that work forward as a professional society focused on support, mentorship, advocacy, education, representation, and community building.</p>
 	</div>
-	<div class="wrap ia-story-track">
+	<div class="wrap ia-story-track" data-progress-track>
 		<article class="ia-story-step ia-reveal"><span>01</span><h3>Train Us For Ireland</h3><p>A national advocacy movement giving voice to issues affecting International Medical Graduates.</p></article>
 		<article class="ia-story-step ia-reveal"><span>02</span><h3>Seven-year advocacy journey</h3><p>Sustained professional dialogue, public awareness, and stakeholder engagement on training, immigration, dignity, and retention.</p></article>
 		<article class="ia-story-step ia-reveal"><span>03</span><h3>IAID professional society</h3><p>A formal platform for support, mentorship, education, representation, and community building.</p></article>
@@ -230,27 +221,17 @@
 		<span class="ia-label">Register Interest</span>
 		<h2>Join a growing professional community</h2>
 		<p>IAID welcomes international doctors who wish to connect, contribute, mentor, learn, advocate, and support colleagues across Ireland. Register your interest to stay informed about IAID activities, committees, events, and opportunities to participate.</p>
-		<a class="ia-button ia-button-primary" href="mailto:trainus.forireland@gmail.com">Register Interest</a>
+		<a class="ia-button ia-button-primary" href="membership-register-interest/">Register Interest</a>
 	</div>
 </section>
 </main>
 <footer class="site-footer">
-	<div class="footer-cta">
-		<div class="wrap footer-cta-inner">
-			<div>
-				<p class="eyebrow">Register Interest</p>
-				<h2>Connect with IAID</h2>
-				<p>Join a professional community supporting international doctors across Ireland.</p>
-			</div>
-			<a class="button button-secondary" href="mailto:trainus.forireland@gmail.com">Register Interest</a>
-		</div>
-	</div>
 	<div class="wrap footer-grid">
 		<div class="footer-brand">
-			<a href="./" class="footer-logo-link" rel="home"><img class="site-logo" src="assets/images/iaid-logo.png" alt="Irish Association of International Doctors logo"></a>
+			<a href="./" class="footer-logo-link" rel="home"><img class="site-logo" src="assets/images/iaid-logo-official.jpeg" alt="Irish Association of International Doctors" width="1024" height="1024"></a>
 			<p class="footer-title">Irish Association of International Doctors</p>
 			<p>A professional medical society supporting international doctors in Ireland through advocacy, education, mentorship, immigration guidance, relocation support, research, networking, and community support.</p>
-			<a href="mailto:trainus.forireland@gmail.com" style="display:inline-block;margin-top:12px;font-weight:700;color:#22d3ee;">trainus.forireland@gmail.com</a>
+			<a class="footer-email" href="mailto:trainus.forireland@gmail.com">trainus.forireland@gmail.com</a>
 		</div>
 		<div>
 			<h2>Quick links</h2>
@@ -260,7 +241,7 @@
 				<li><a href="media-coverage/">Media Coverage</a></li>
 				<li><a href="resources/">Resources</a></li>
 				<li><a href="contact/">Contact</a></li>
-				<li><a href="mailto:trainus.forireland@gmail.com">Register Interest</a></li>
+				<li><a href="membership-register-interest/">Register Interest</a></li>
 			</ul>
 		</div>
 		<div>
@@ -278,7 +259,7 @@
 		<div>
 			<h2>Contact</h2>
 			<p><a href="mailto:trainus.forireland@gmail.com">trainus.forireland@gmail.com</a></p>
-			<p style="margin-top:16px;font-size:0.82rem;opacity:0.55;">External links are provided for reference and public information. IAID does not reproduce copyrighted article content.</p>
+			<p class="footer-note">External links are provided for reference and public information. IAID does not reproduce copyrighted article content.</p>
 		</div>
 	</div>
 	<div class="wrap footer-bottom">

@@ -3,23 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script>
-		document.documentElement.classList.add('js-enabled');
-		window.setTimeout(function () {
-			document.documentElement.classList.remove('is-loading', 'has-reveal-js');
-			document.querySelectorAll('.ia-reveal, .reveal-ready, .motion-reveal').forEach(function (element) {
-				var wasPending = element.classList.contains('motion-pending');
-				element.classList.add('is-visible', 'motion-in');
-				element.classList.remove('motion-pending');
-
-				if (wasPending) {
-					element.style.setProperty('--motion-delay', '0ms');
-				} else if (!element.classList.contains('motion-reveal')) {
-					element.style.transitionDelay = '0ms';
-				}
-			});
-		}, 700);
-	</script>
+	<link rel="icon" type="image/png" sizes="256x256" href="../assets/images/iaid-logo.png">
+	<link rel="apple-touch-icon" href="../assets/images/iaid-logo.png">
 	<title>Our Story | From Train Us For Ireland to IAID</title>
 	<meta name="description" content="Discover IAID's journey from Train Us For Ireland to a professional society representing and supporting international doctors across Ireland.">
 	<meta name="robots" content="index, follow">
@@ -30,14 +15,14 @@
 	<meta property="og:title" content="Our Story | From Train Us For Ireland to IAID">
 	<meta property="og:description" content="A seven-year advocacy journey evolving into a professional society for international doctors in Ireland.">
 	<meta property="og:url" content="https://theiaid.org/our-story/">
-	<meta property="og:image" content="https://theiaid.org/assets/images/iaid-logo.png">
+	<meta property="og:image" content="https://theiaid.org/assets/images/iaid-social-preview-editorial.jpg">
 	<meta property="og:image:alt" content="IAID — Irish Association of International Doctors">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Our Story | From Train Us For Ireland to IAID">
 	<meta name="twitter:description" content="A seven-year advocacy journey evolving into a professional society for international doctors in Ireland.">
-	<meta name="twitter:image" content="https://theiaid.org/assets/images/iaid-logo.png">
-	<link rel="stylesheet" href="../assets/css/main.css">
-	<script src="../assets/js/main.js" defer></script>
+	<meta name="twitter:image" content="https://theiaid.org/assets/images/iaid-social-preview-editorial.jpg">
+	<link rel="stylesheet" href="../assets/css/site.css">
+	<script src="../assets/js/site.js" defer></script>
 </head>
 <body class="page ia-page-story">
 <a class="skip-link screen-reader-text" href="#primary">Skip to content</a>
@@ -51,7 +36,7 @@
 	</div>
 	<div class="wrap header-inner">
 		<div class="brand">
-			<a href="../" class="site-logo-link" rel="home"><img class="site-logo" src="../assets/images/iaid-logo.png" alt="Irish Association of International Doctors logo"></a>
+			<a href="../" class="site-logo-link" rel="home"><img class="site-logo" src="../assets/images/iaid-logo-official.jpeg" alt="Irish Association of International Doctors" width="1024" height="1024"></a>
 			<div class="brand-text">
 				<p class="site-name">IAID</p>
 				<p class="site-tagline">Irish Association of International Doctors</p>
@@ -71,7 +56,7 @@
 				<li><a href="../committees/">Committees</a></li>
 				<li><a href="../resources/">Resources</a></li>
 				<li><a href="../contact/">Contact</a></li>
-				<li><a href="mailto:trainus.forireland@gmail.com">Register Interest</a></li>
+				<li><a href="../membership-register-interest/">Register Interest</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -87,11 +72,24 @@
 	<section class="ia-page-content ia-timeline-page">
 		<div class="wrap ia-prose ia-reveal">
 <div class="iaid-page-intro">
-	<h2>Our Story: From Train Us For Ireland to IAID</h2>
 	<p>The Irish Association of International Doctors emerges from a seven-year national advocacy movement initiated under the banner "Train Us For Ireland". That movement helped create a professional voice for International Medical Graduates contributing to healthcare in Ireland while navigating barriers to training, progression, immigration stability, family life, and representation.</p>
 </div>
-<div class="story-transition story-transition-full">Train Us For Ireland <span></span> IAID</div>
-<div class="story-timeline">
+<figure class="editorial-figure editorial-break editorial-figure-story story-cinema-frame ia-reveal">
+	<picture>
+		<source media="(max-width: 760px)" srcset="../assets/images/editorial/story-doctors-collaborating-720.webp" type="image/webp">
+		<source srcset="../assets/images/editorial/story-doctors-collaborating-1200.webp" type="image/webp">
+		<img src="../assets/images/editorial/story-doctors-collaborating.jpg" alt="Two doctors reviewing information together during a professional working session" width="1200" height="1800" loading="lazy" decoding="async">
+	</picture>
+	<figcaption>Professional collaboration, shown for editorial context. The people pictured are not identified as IAID members.</figcaption>
+</figure>
+<div class="story-principles" aria-label="The journey at a glance">
+	<div><strong>Seven years</strong><span>National advocacy</span></div>
+	<div><strong>Evidence-led</strong><span>Public awareness</span></div>
+	<div><strong>Professional</strong><span>Representation</span></div>
+	<div><strong>Forward together</strong><span>Community &amp; leadership</span></div>
+</div>
+<h2 class="story-transition story-transition-full">Train Us For Ireland <span></span> IAID</h2>
+<div class="story-timeline" data-progress-track>
 	<article>
 		<span>1</span>
 		<h3>From Train Us For Ireland to IAID</h3>
@@ -134,15 +132,15 @@
 				<h2>Connect with IAID</h2>
 				<p>Join a professional community supporting international doctors across Ireland.</p>
 			</div>
-			<a class="button button-secondary" href="mailto:trainus.forireland@gmail.com">Register Interest</a>
+			<a class="button button-secondary" href="../membership-register-interest/">Register Interest</a>
 		</div>
 	</div>
 	<div class="wrap footer-grid">
 		<div class="footer-brand">
-			<a href="../" class="footer-logo-link" rel="home"><img class="site-logo" src="../assets/images/iaid-logo.png" alt="Irish Association of International Doctors logo"></a>
+			<a href="../" class="footer-logo-link" rel="home"><img class="site-logo" src="../assets/images/iaid-logo-official.jpeg" alt="Irish Association of International Doctors" width="1024" height="1024"></a>
 			<p class="footer-title">Irish Association of International Doctors</p>
 			<p>A professional medical society supporting international doctors in Ireland through advocacy, education, mentorship, immigration guidance, relocation support, research, networking, and community support.</p>
-			<a href="mailto:trainus.forireland@gmail.com" style="display:inline-block;margin-top:12px;font-weight:700;color:#22d3ee;">trainus.forireland@gmail.com</a>
+			<a class="footer-email" href="mailto:trainus.forireland@gmail.com">trainus.forireland@gmail.com</a>
 		</div>
 		<div>
 			<h2>Quick links</h2>
@@ -152,7 +150,7 @@
 				<li><a href="../media-coverage/">Media Coverage</a></li>
 				<li><a href="../resources/">Resources</a></li>
 				<li><a href="../contact/">Contact</a></li>
-				<li><a href="mailto:trainus.forireland@gmail.com">Register Interest</a></li>
+				<li><a href="../membership-register-interest/">Register Interest</a></li>
 			</ul>
 		</div>
 		<div>
@@ -170,7 +168,7 @@
 		<div>
 			<h2>Contact</h2>
 			<p><a href="mailto:trainus.forireland@gmail.com">trainus.forireland@gmail.com</a></p>
-			<p style="margin-top:16px;font-size:0.82rem;opacity:0.55;">External links are provided for reference and public information. IAID does not reproduce copyrighted article content.</p>
+			<p class="footer-note">External links are provided for reference and public information. IAID does not reproduce copyrighted article content.</p>
 		</div>
 	</div>
 	<div class="wrap footer-bottom">
