@@ -2065,6 +2065,23 @@ h1, h2, h3, h4 { color: inherit; }
 }
 
 @media (max-width: 760px) {
+	.ia-page-hero-inner .ia-label {
+		min-height: 180px;
+		padding: 1.25rem 1.4rem;
+		text-align: center;
+	}
+	.ia-page-hero-inner .ia-label::before {
+		right: 50%;
+		bottom: 35%;
+		width: 7.5rem;
+		transform: translate(50%, 50%);
+	}
+	.ia-page-hero-inner .ia-label::after {
+		top: 65%;
+		left: 50%;
+		width: 92px;
+		transform: translate(-50%, -50%);
+	}
 	.media-thumbnail { aspect-ratio: 16 / 10; border-radius: 13px; }
 	.media-thumbnail-source { font-size: 0.61rem; }
 	.story-cinema-frame { border-radius: 20px; }
