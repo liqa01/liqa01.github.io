@@ -1114,6 +1114,17 @@
 	.story-journey-rail { top: 68px; }
 	.story-chapter { scroll-margin-top: 9.5rem; padding: 3.7rem var(--gutter); }
 	.story-chapter-content h2 { font-size: clamp(2.5rem, 11vw, 3.55rem); line-height: 1.11; }
+	.story-future-image figcaption {
+		position: static;
+		margin: 0;
+		padding: 1rem 1.1rem 1.1rem;
+		border: 0;
+		border-top: 1px solid rgba(255, 255, 255, 0.18);
+		border-radius: 0;
+		background: var(--forest-deep);
+		font-size: 0.82rem;
+		backdrop-filter: none;
+	}
 	.story-society-emblem { min-height: 195px; }
 	.story-society-logo-frame { width: min(42%, 145px); border-width: 5px; }
 	.story-society-rings { width: min(58%, 195px); box-shadow: 0 0 0 1.75rem rgba(255, 255, 255, 0.03), 0 0 0 3.5rem rgba(255, 255, 255, 0.018); }
@@ -1336,6 +1347,32 @@
 
 	.story-journey-rail-line span {
 		transform: scaleY(1);
+	}
+}
+
+/* Keep the mobile hero's layered statistic without obscuring its editorial caption. */
+@media (max-width: 760px) {
+	.story-journey-hero-visual {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.story-journey-hero-visual picture { grid-row: 1; }
+
+	.story-journey-hero-stat {
+		position: relative;
+		grid-row: 2;
+		left: auto;
+		bottom: auto;
+		justify-self: start;
+		width: min(calc(100% - 2rem), 15.5rem);
+		max-width: none;
+		margin: -1.7rem 1rem 0;
+	}
+
+	.story-journey-hero-visual figcaption {
+		grid-row: 3;
+		padding-top: 0.75rem;
 	}
 }
 
